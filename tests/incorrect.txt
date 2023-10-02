@@ -1,0 +1,4 @@
+for i = 4 downto 3 begin
+    a = b + c;
+    c = d + e;
+end
