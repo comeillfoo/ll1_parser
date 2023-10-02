@@ -23,12 +23,13 @@ KEYWORDS = {
     'do': Do(),
     'begin': Begin(),
     'end': End(),
-    '==': Equal()
+    '==': Equal(),
+    ':=': PascalAssign()
 }
 
 INT = re.compile(r'([0-9]+).*')
 ID = re.compile(r'([a-zA-Z_][0-9a-zA-Z_]*).*')
-KEYWORD = re.compile(r'(for|to|downto|do|begin|end).*')
+KEYWORD = re.compile(r'(for|to|downto|do|begin|end|==|:=).*')
 
 def lex(text: str) -> list[Token]:
     text = text.strip()

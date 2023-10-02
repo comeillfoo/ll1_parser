@@ -32,6 +32,9 @@ class Equal(Token):
 class Assign(Token):
     is_terminal = True
 
+class PascalAssign(Token):
+    is_terminal = True
+
 class Not(Token):
     is_terminal = True
 

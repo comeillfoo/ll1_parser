@@ -9,7 +9,7 @@ M = {
     Statement: { Id: [ Assignment() ], For: [ ForStatement() ] },
     StatementList_: { Id: [ StatementList() ], For: [ StatementList() ], End: [], Eof: [ ] },
     Assignment: { Id: [ Id(), Assign(), Expression(), Semicolon() ] },
-    ForStatement: { For: [ For(), Assignment(), ForDirection(), Expression(), Do(), ForBody() ] },
+    ForStatement: { For: [ For(), Id(), PascalAssign(), Expression(), ForDirection(), Expression(), Do(), ForBody() ] },
     Expression: { Not: [ Term(), Expression_() ], OpenBracket: [ Term(), Expression_() ], Id: [ Term(), Expression_() ], Int: [ Term(), Expression_() ] },
     Term: { Not: [ Not(), Factor(), Term_() ], OpenBracket: [ Factor(), Term_() ], Id: [ Factor(), Term_() ], Int: [ Factor(), Term_() ] },
     Term_: {
@@ -22,7 +22,9 @@ M = {
         Equal: [],
         CloseBracket: [],
         Semicolon: [],
-        Do: [] },
+        Do: [],
+        To: [],
+        DownTo: [] },
     Expression_: {
         Plus: [ Plus(), Term(), Expression_() ],
         Minus: [ Minus(), Term(), Expression_() ],
@@ -31,7 +33,9 @@ M = {
         Equal: [ Equal(), Term(), Expression_() ],
         CloseBracket: [],
         Semicolon: [],
-        Do: [] },
+        Do: [],
+        To: [],
+        DownTo: [] },
     Factor: {
         OpenBracket: [ OpenBracket(), Expression(), CloseBracket() ],
         Id: [ Id() ],
