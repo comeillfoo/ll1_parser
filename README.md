@@ -3,7 +3,7 @@
 ```
 program    -> stmt_list
 stmt_list  -> stmt stmt_list'
-stmt_list' -> $ \varepsilon $
+stmt_list' -> ε
             | stmt_list
 stmt        -> assign
             | for_stmt
@@ -14,12 +14,12 @@ expr'       -> '+' term expr'
             | '>' term expr'
             | '<' term expr'
             | '==' term expr'
-            | $ \varepsilon $
+            | ε
 term        -> '!' factor term'
             | factor term'
 term'       -> '*' factor term'
             | '/' factor term'
-            | $ \varepsilon $
+            | ε
 factor      -> '(' expr ')'
             | ID
             | INT
